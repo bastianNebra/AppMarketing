@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "355860721852",
+    "firebase_url": "https://app-marketing-aefdf-default-rtdb.firebaseio.com",
+    "project_id": "app-marketing-aefdf",
+    "storage_bucket": "app-marketing-aefdf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355860721852:android:dc0e6594b1f9b6bab1a0b9",
+        "android_client_info": {
+          "package_name": "de.stud.hskl.appmarketing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "355860721852-vvfvrk7qukfojln2vcdhghmkfh9206u5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBU9jr6B-1Enmyo8mMM3BmYJ9x9O8glU4U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "355860721852-vvfvrk7qukfojln2vcdhghmkfh9206u5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
