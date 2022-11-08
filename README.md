@@ -6,12 +6,15 @@ App Marketing
 
 
 // Write a message to the database
+
+
 FirebaseDatabase database = FirebaseDatabase.getInstance();
 DatabaseReference myRef = database.getReference("message");
 
 myRef.setValue("Hello, World!");
 
 // Read from the database
+
 myRef.addValueEventListener(new ValueEventListener() {
     @Override
     public void onDataChange(DataSnapshot dataSnapshot) {
