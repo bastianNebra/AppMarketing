@@ -3,6 +3,8 @@ App Marketing
 
 
 1- Write to your database
+
+
 // Write a message to the database
 FirebaseDatabase database = FirebaseDatabase.getInstance();
 DatabaseReference myRef = database.getReference("message");
