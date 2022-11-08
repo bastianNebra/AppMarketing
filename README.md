@@ -45,6 +45,6 @@ myRef.addValueEventListener(new ValueEventListener() {
 3) eigener Branch erstellen: git Branch branchName
 4) Branch wechseln : git checkhout branchName
 5)Änderung committen: git commit -m "Message" 
-6) git pull : git push --rebase origin master
+6) git pull : git pull --rebase origin master
 7) git push ins Remote Repository:  git push --set-upstream origin branchName
 8) Branchen Zusammenführen und Änderungen im master Branch zu übertragen: git merge 
