@@ -40,3 +40,11 @@ myRef.addValueEventListener(new ValueEventListener() {
 -keepclassmembers class com.yourcompany.models.** {
   *;
 }
+
+2) Repository clonen: git clone git@github.com:bastianNebra/AppMarketing.git
+3) eigener Branch erstellen: git Branch branchName
+4) Branch wechseln : git checkhout branchName
+5)Änderung committen: git commit -m "Message" 
+6) git pull : git push --rebase origin master
+7) git push ins Remote Repository:  git push --set-upstream origin branchName
+
