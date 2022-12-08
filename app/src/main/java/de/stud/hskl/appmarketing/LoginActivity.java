@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        TextView tvSwitchToRegister = findViewById(R.id.tvSwitchToRegister);
+        TextView tvSwitchToRegister = findViewById(R.id.textView2);
         tvSwitchToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,8 +53,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void authenticateUser() {
-        EditText etLoginEmail = findViewById(R.id.etLoginEmail);
-        EditText etLoginPassword = findViewById(R.id.etLoginPassword);
+        EditText etLoginEmail = findViewById(R.id.inputEmail);
+        EditText etLoginPassword = findViewById(R.id.inputPassword2);
 
         String email = etLoginEmail.getText().toString();
         String password = etLoginPassword.getText().toString();
