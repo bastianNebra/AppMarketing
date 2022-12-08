@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView textViewSwitchToLogin = findViewById(R.id.tvSwitchToLogin);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView textViewSwitchToLogin = findViewById(R.id.alreadyHaveAccount);
         textViewSwitchToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,43 +50,47 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void registerUser() {
-        EditText etFirstName = findViewById(R.id.etFirstName);
-        EditText etLastName = findViewById(R.id.etLastName);
-        EditText etRegisterEmail = findViewById(R.id.etRegisterEmail);
-        EditText etRegisterPassword = findViewById(R.id.etRegisterPassword);
+        EditText etUsername = findViewById(R.id.inputUsername);
+        EditText etRegisterEmail = findViewById(R.id.inputEmail);
+        EditText etPassword = findViewById(R.id.inputPassword);
+        EditText etPasswordConfirm = findViewById(R.id.inputConfirmPassword);
 
-        String firstName = etFirstName.getText().toString();
-        String lastName = etLastName.getText().toString();
+        String userName = etUsername.getText().toString();
         String email = etRegisterEmail.getText().toString();
-        String password = etRegisterPassword.getText().toString();
+        String password = etPassword.getText().toString();
+        String confirmPassword = etPasswordConfirm.getText().toString();
 
-        if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || password.isEmpty()) {
+        if (userName.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             Toast.makeText(this, "Please fill all fields", Toast.LENGTH_LONG).show();
             return;
         }
 
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
+        if (password.equals(confirmPassword)){
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
 
-                            User user = new User(firstName, lastName, email);
+                                User user = new User(userName, email, password);
 
-                            FirebaseDatabase.getInstance().getReference("users")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-                                            showMainActivity();
-                                        }
-                                    });
-                        } else {
-                            Toast.makeText(RegisterActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_LONG).show();
+                                FirebaseDatabase.getInstance().getReference("users")
+                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                showMainActivity();
+                                            }
+                                        });
+                            } else {
+                                Toast.makeText(RegisterActivity.this, "Authentication failed.",
+                                        Toast.LENGTH_LONG).show();
+                            }
                         }
-                    }
-                });
+                    });
+        }else {
+            Toast.makeText(RegisterActivity.this,"Authentication failed.",Toast.LENGTH_LONG);
+        }
     }
 
     private void showMainActivity() {
