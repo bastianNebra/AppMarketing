@@ -28,7 +28,8 @@
         android:layout_height="wrap_content"
         android:text="Fahrer"
         tools:layout_editor_absoluteX="224dp"
-        tools:layout_editor_absoluteY="521dp" />
+        tools:layout_editor_absoluteY="521dp"
+        tools:ignore="MissingConstraints" />
 
     <CheckBox
         android:id="@+id/checkBox6"
@@ -36,7 +37,8 @@
         android:layout_height="wrap_content"
         android:text="Mitfahrer"
         tools:layout_editor_absoluteX="224dp"
-        tools:layout_editor_absoluteY="594dp" />
+        tools:layout_editor_absoluteY="594dp"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
@@ -60,7 +62,8 @@
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="142dp"
         tools:layout_editor_absoluteY="32dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="409dp"
