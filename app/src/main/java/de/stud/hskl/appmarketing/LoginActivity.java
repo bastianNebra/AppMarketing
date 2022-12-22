@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -80,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void showMainActivity() {
         try {
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Intent intent = new Intent(LoginActivity.this, profilbearbeiten_generel.class);
             startActivity(intent);
             finish();
         }catch (Exception e){

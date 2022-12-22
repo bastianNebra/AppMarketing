@@ -19,9 +19,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+
 public class RegisterActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
+   private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +95,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void showMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, profilbearbeiten_generel.class);
         startActivity(intent);
         finish();
     }
