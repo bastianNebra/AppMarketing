@@ -8,15 +8,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
+//import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+/*
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuth;*/
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity<FirebaseAuth> extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Initialize Firebase Auth
        try {
-           mAuth = FirebaseAuth.getInstance();
+           //mAuth = FirebaseAuth.getInstance();
 
        }catch (Exception cl){
            cl.printStackTrace();
@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        mAuth.signInWithEmailAndPassword(email, password)
+        /*mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
-                });
+                });*/
     }
 
     private void showMainActivity() {

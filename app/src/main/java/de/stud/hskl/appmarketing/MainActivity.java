@@ -13,17 +13,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        DriveData[] DriveData = new DriveData[]{
-                //einfügen der Daten über DB
-                //new DriveData(//alle einzelnen Daten inkl. Kartenzugriff)
-        };
-
-        DriveAdapter DriveAdapter = new DriveAdapter(DriveData, MainActivity.this);
-        recyclerView.setAdapter(DriveAdapter);
-
     }
 }
