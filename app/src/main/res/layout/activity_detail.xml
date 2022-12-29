@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background_green">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/detail_von_nach"
+        android:layout_marginTop="14dp"
+        android:text="Von - Nach"
+        android:layout_gravity="center"
+        android:textColor="@color/teal_700"
+        android:layout_marginBottom="12dp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <com.google.android.gms.maps.MapView
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:id="@+id/detail_map"
+        android:padding="8dp"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:id="@+id/detail_pfp_fahrer"
+            android:background="@drawable/input_bg"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/ic_person"/>
+
+        <TextView
+            android:id="@+id/detail_name_fahrer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fahrer"
+            android:layout_gravity="left"
+            android:textColor="@color/teal_700"
+            android:textSize="18sp"
+            android:layout_marginRight="16dp"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/detail_freie_sitzplaetze"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="freie Sitzplätze: "
+            android:textSize="18sp"
+            android:maxLines="1"
+            android:layout_marginRight="16dp"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/detail_abholort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Abholort"
+        android:paddingBottom="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/input_bg"/>
+
+    <EditText
+        android:id="@+id/detail_zielort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Zielort"
+        android:paddingBottom="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/input_bg"/>
+
+    <EditText
+        android:id="@+id/details_mitfahrer_buchen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sitzplatz Anzahl buchen"
+        android:inputType="number"
+        android:paddingBottom="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/input_bg"/>
+
+    <Button
+        android:id="@+id/buchen_btn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:text="Buchen"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_mitfahrer_buchen"
+        app:layout_constraintVertical_bias="0.3"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
