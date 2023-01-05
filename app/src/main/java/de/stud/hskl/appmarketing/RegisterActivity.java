@@ -38,6 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 registerUser();
+                System.out.println();
             }
         });
 
@@ -68,6 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (password.equals(confirmPassword)){
             mAuth.createUserWithEmailAndPassword(email, password)
+
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {

@@ -13,51 +13,69 @@
         android:theme="@style/Theme.AppMarketing"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
             android:name=".Dashboard_fahrer"
-=======
+            android:parentActivityName=".MainActivity"
+            android:exported="false"/>
+
+
+        <activity
             android:name=".DetailActivity"
->>>>>>> f592667b75c087a70f34ce366dabaf11c07580a9
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:parentActivityName=".MainActivity"
+            android:exported="false"/>
+
+
         <activity
-<<<<<<< HEAD
+
             android:name=".Profilbearbeiten_Mitfahrer"
-=======
-            android:name=".Mitfahrer_Profil"
->>>>>>> f592667b75c087a70f34ce366dabaf11c07580a9
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:parentActivityName=".MainActivity"
+            android:exported="false"/>
+
+
         <activity
-<<<<<<< HEAD
+
+            android:name=".Mitfahrer_Profil"
+            android:parentActivityName=".MainActivity"
+            android:exported="false"/>
+
+
+        <activity
             android:name=".profilbearbeiten_generel"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:parentActivityName=".MainActivity"
+            android:exported="false"/>
+
+
+
         <activity
             android:name=".Profilbearbeiten_Fahrer"
-=======
+            android:parentActivityName=".MainActivity"
+            android:exported="false"/>
+
+
+        <activity
             android:name=".Fahrer_Profil"
->>>>>>> f592667b75c087a70f34ce366dabaf11c07580a9
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:parentActivityName=".MainActivity"
+            android:exported="false"/>
+
+
+        <activity
+            android:name=".MainActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".General_profil"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".General_profil_edit"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="true"
