@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
+   private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        mAuth.signInWithEmailAndPassword(email, password)
+       mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
