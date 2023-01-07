@@ -18,7 +18,6 @@ public class Header extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-
     TextView yourName;
     TextView yourStatus;
 
@@ -31,8 +30,8 @@ public class Header extends AppCompatActivity {
 
         databaseReference = firebaseDatabase.getReference("users");
 
-        TextView yourName = findViewById(R.id.your_name);
-        TextView yourStatus = findViewById(R.id.your_status);
+        yourName = findViewById(R.id.your_name);
+        yourStatus = findViewById(R.id.your_status);
 
         getData();
     }
@@ -43,6 +42,7 @@ public class Header extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String value = snapshot.getValue(String.class);
+                System.out.println("Values von snapshot "+ value);
                 yourName.setText((CharSequence) snapshot.child("firstName").getValue());
                 yourStatus.setText((CharSequence) snapshot.child("status").getValue());
             }
