@@ -71,11 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                           Header header = new Header();
-                           header.getData();
 
-                           System.out.println("Header data :"
-                                   +header);
                             showMainActivity();
 
                         } else {
