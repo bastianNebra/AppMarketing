@@ -25,6 +25,7 @@
         android:layout_height="200dp"
         android:id="@+id/detail_map"
         android:padding="8dp"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_gravity="center"/>
 
     <LinearLayout
