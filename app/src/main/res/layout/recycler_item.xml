@@ -17,7 +17,7 @@
 
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="5.5">
@@ -33,33 +33,33 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:weightSum="2"
                 android:layout_weight="1.5"
-                android:background="@drawable/card_border">
+                android:background="@drawable/card_border"
+                android:weightSum="2">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1.3"
-                    android:padding="10dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                     <TextView
+                        android:id="@+id/card_von_nach"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Von - Nach"
-                        android:textSize="20sp"
                         android:maxLines="1"
+                        android:text="Von - Nach"
                         android:textColor="@color/teal_700"
-                        android:id="@+id/card_von_nach"/>
+                        android:textSize="20sp" />
 
                     <TextView
+                        android:id="@+id/card_Fahrer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="0"
                         android:text="Name Fahrer"
-                        android:textSize="18sp"
-                        android:id="@+id/card_Fahrer"
-                        android:maxLines="0"/>
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -70,12 +70,12 @@
                     android:gravity="center">
 
                     <TextView
+                        android:id="@+id/card_abfahrtZeit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="0"
                         android:text="Abfahrt Zeit"
-                        android:textSize="18sp"
-                        android:id="@+id/card_abfahrtZeit"
-                        android:maxLines="0"/>
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
