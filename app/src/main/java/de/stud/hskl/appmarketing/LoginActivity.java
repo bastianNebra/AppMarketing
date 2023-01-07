@@ -71,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+
                             showMainActivity();
 
                             //Activity ausfuehlen
@@ -83,9 +84,6 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
-    private void general_profil(){
-
-    }
 
     private void showMainActivity() {
         try {

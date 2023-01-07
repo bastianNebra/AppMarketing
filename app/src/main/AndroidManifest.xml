@@ -26,27 +26,7 @@
 
         <activity
 
-            android:name=".Profilbearbeiten_Mitfahrer"
-            android:parentActivityName=".MainActivity"
-            android:exported="false"/>
-
-
-        <activity
-
             android:name=".Mitfahrer_Profil"
-            android:parentActivityName=".MainActivity"
-            android:exported="false"/>
-
-
-        <activity
-            android:name=".profilbearbeiten_generel"
-            android:parentActivityName=".MainActivity"
-            android:exported="false"/>
-
-
-
-        <activity
-            android:name=".Profilbearbeiten_Fahrer"
             android:parentActivityName=".MainActivity"
             android:exported="false"/>
 
@@ -63,7 +43,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".General_profil"
+            android:name=".List_item"
             android:parentActivityName=".MainActivity"
             android:exported="false" />
 

@@ -5,15 +5,10 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -54,34 +49,43 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId())
                 {
-                    case R.id.profil_general:
+                    case R.id.fahrer_profil:
                     {
 
-
-                        Button btnGeneralProfil = findViewById(R.id.profil_general);
-                        btnGeneralProfil.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                profilAusfuehlen();
-                            }
-                        });
-
-                            Intent intent = new Intent(MainActivity.this, General_profil.class);
+                            Intent intent = new Intent(MainActivity.this, Fahrer_Profil.class);
                             startActivity(intent);
                             break;
 
                     }
-                    case R.id.profil_general_edit:
+                    case R.id.mitfahrer_profil:
                     {
 
-                            Intent intent = new Intent(MainActivity.this, General_profil_edit.class);
+                            Intent intent = new Intent(MainActivity.this, Mitfahrer_Profil.class);
                             startActivity(intent);
                             break;
 
                     }
-                    case R.id.profil_logout:
+                    case R.id.general_profil_edit:
                     {
-                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                        Intent intent = new Intent(MainActivity.this, General_profil_edit.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case R.id.fahrtcart_item_list:
+                    {
+                        Intent intent = new Intent(MainActivity.this, List_item.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case R.id.activity_detail:
+                    {
+                        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case R.id.dashboard_fahrer:
+                    {
+                        Intent intent = new Intent(MainActivity.this, Dashboard_fahrer.class);
                         startActivity(intent);
                         break;
                     }
