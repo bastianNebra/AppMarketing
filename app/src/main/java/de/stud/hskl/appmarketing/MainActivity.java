@@ -9,6 +9,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -44,6 +46,23 @@ public class MainActivity extends AppCompatActivity {
         drawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        Button btnMitfahrer = findViewById(R.id.btnMitfahrer);
+        Button btnFahrer = findViewById(R.id.btnFahrer);
+
+
+        btnFahrer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewFahrer();
+            }
+        });
+
+        btnMitfahrer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewMitfahrer();
+            }
+        });
 
 
 
@@ -97,6 +116,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void viewMitfahrer() {
+
+        try {
+            Intent intent = new Intent(MainActivity.this, Mitfahrer_Profil.class);
+            startActivity(intent);
+            finish();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void viewFahrer() {
+
+        try {
+            Intent intent = new Intent(MainActivity.this, Fahrer_Profil.class);
+            startActivity(intent);
+            finish();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void profilAusfuehlen() {

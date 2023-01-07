@@ -158,6 +158,7 @@
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:paddingBottom="5dp"
+        android:id="@+id/linear"
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
@@ -188,13 +189,29 @@
             android:paddingRight="10dp"
             android:paddingBottom="10dp"
             android:textSize="20sp"
+            android:id="@+id/anzahl"
             tools:ignore="TouchTargetSizeCheck" />
+
+
 
 
 
     </LinearLayout>
 
-
+    <Button
+        android:id="@+id/speichern"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:text="speichern"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear"
+        app:layout_constraintVertical_bias="0.173" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
