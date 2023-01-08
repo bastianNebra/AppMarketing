@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/cons_layout"
     android:background="@drawable/background_green">
 
 
@@ -62,6 +63,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adress_fahrer" />
+    <EditText
+        android:id="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:height="50dp"
+        android:background="@drawable/input_bg"
+        android:hint="Email Adresse"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adress_fahrer_ziel" />
 
 
 
@@ -70,7 +89,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/switches_layout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/adress_fahrer_ziel" >
+        app:layout_constraintTop_toBottomOf="@id/mail" >
 
         <Space
             android:layout_width="10dp"
@@ -224,4 +243,3 @@
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>

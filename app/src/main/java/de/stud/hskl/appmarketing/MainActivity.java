@@ -117,6 +117,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void viewFahrer() {
+        Intent intent = new Intent(MainActivity.this, Fahrer_Profil.class);
+        startActivity(intent);
+    }
+
+    private void viewMitfahrer() {
+        Intent intent = new Intent(MainActivity.this, Mitfahrer_Profil.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public void onBackPressed() {

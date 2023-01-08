@@ -4,25 +4,27 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
-<<<<<<< HEAD
-=======
+
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
->>>>>>> 8ca040e8cb24f8f5e339ff4f9bafe7645945a0fd
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.Toast;
 <<<<<<< HEAD
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 
 public class Fahrer_Profil extends AppCompatActivity implements OnMapReadyCallback {
-=======
+
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,22 +35,20 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 public class Fahrer_Profil extends AppCompatActivity implements OnMapReadyCallback {
 
 
->>>>>>> 8ca040e8cb24f8f5e339ff4f9bafe7645945a0fd
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fahrer_profil);
-<<<<<<< HEAD
-=======
+
         Button btn = (Button)findViewById(R.id.speichern);
->>>>>>> 8ca040e8cb24f8f5e339ff4f9bafe7645945a0fd
+
 
         /*SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView);
         assert supportMapFragment != null;
         supportMapFragment.getMapAsync(this);*/
-<<<<<<< HEAD
-        Button btn = (Button)findViewById(R.id.speichern);
+
         EditText editText = findViewById(R.id.adress_fahrer);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +56,7 @@ public class Fahrer_Profil extends AppCompatActivity implements OnMapReadyCallba
                 String address = editText.getText().toString();
                 GeoCodeLocation locationAddress = new GeoCodeLocation();
                 locationAddress.getAddressFromLocation(address, getApplicationContext(), new GeoCoderHandler());
-=======
+
 
         EditText adress_fahrer = findViewById(R.id.adress_fahrer);
         TextView fahrer = findViewById(R.id.textView);
@@ -64,6 +64,7 @@ public class Fahrer_Profil extends AppCompatActivity implements OnMapReadyCallba
         Switch swith1 = findViewById(R.id.switch1);
         Switch swith2 = findViewById(R.id.switch2);
         EditText auto = findViewById(R.id.auto);
+        EditText mail = findViewById(R.id.mail);
         EditText autobeschreibung = findViewById(R.id.editTextTextMultiLine);
         TextView anzahl_platz = findViewById(R.id.anzahl);
         DAOFahrerProfil dao = new DAOFahrerProfil();
@@ -79,6 +80,7 @@ public class Fahrer_Profil extends AppCompatActivity implements OnMapReadyCallba
                 FahrerProfil f = new FahrerProfil(adress_fahrer.getText().toString(),fahrer.getText().toString(),adress_ziel.getText().toString(),
                         swith1.getText().toString(),swith2.getText().toString(),auto.getText().toString(),autobeschreibung.getText().toString(),
                         anzahl_platz.getText().toString());
+                f.setMail(mail.getText().toString());
                 dao.add(f).addOnSuccessListener(suc ->{
                     Toast.makeText(Fahrer_Profil.this, "Fahrmöglichkeit Erfolgreich hinzugefügt", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Fahrer_Profil.this, MainActivity.class);
@@ -94,7 +96,7 @@ public class Fahrer_Profil extends AppCompatActivity implements OnMapReadyCallba
 
 
 
->>>>>>> 8ca040e8cb24f8f5e339ff4f9bafe7645945a0fd
+
             }
         });
 
@@ -125,14 +127,10 @@ public class Fahrer_Profil extends AppCompatActivity implements OnMapReadyCallba
     public void onMapReady(@NonNull GoogleMap googleMap) {
 
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 8ca040e8cb24f8f5e339ff4f9bafe7645945a0fd
 
 }
 
-<<<<<<< HEAD
+
 }
-=======
->>>>>>> 8ca040e8cb24f8f5e339ff4f9bafe7645945a0fd
+

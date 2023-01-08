@@ -14,6 +14,16 @@ public class FahrerProfil {
     private String  autobeschreibun;
     private String anzahl_platz;
 
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    private String mail;
+
     public FahrerProfil() {
 
     }
