@@ -12,56 +12,48 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppMarketing"
         tools:targetApi="31">
+        <activity
+            android:name=".RVActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD--TG__I9phq_UESnqw6jzKF3vs2HNV8E"></meta-data>
 
-        <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyD--TG__I9phq_UESnqw6jzKF3vs2HNV8E">
-
-        </meta-data>
         <activity
             android:name=".Dashboard_fahrer"
-            android:parentActivityName=".MainActivity"
-            android:exported="false"/>
-
-
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DetailActivity"
-            android:parentActivityName=".MainActivity"
-            android:exported="false"/>
-
-
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
-
             android:name=".Mitfahrer_Profil"
-            android:parentActivityName=".MainActivity"
-            android:exported="false"/>
-
-
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Fahrer_Profil"
-            android:parentActivityName=".MainActivity"
-            android:exported="false"/>
-
-
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
-            android:parentActivityName=".MainActivity"
             android:exported="false" />
-
         <activity
             android:name=".List_item"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
-
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".General_profil_edit"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
-
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
-
         <activity
             android:name=".LoginActivity"
             android:exported="true"
