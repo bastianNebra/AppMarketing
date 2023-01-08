@@ -38,7 +38,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
 
     private void listFahrtIten() {
         try {
-            Intent intent = new Intent(DetailActivity.this, List_item.class);
+            Intent intent = new Intent(DetailActivity.this, RVActivity.class);
             startActivity(intent);
             finish();
         }catch (Exception e){
