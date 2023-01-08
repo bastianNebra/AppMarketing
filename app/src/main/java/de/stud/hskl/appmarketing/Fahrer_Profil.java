@@ -40,6 +40,7 @@ public class Fahrer_Profil extends AppCompatActivity implements OnMapReadyCallba
         Switch swith1 = findViewById(R.id.switch1);
         Switch swith2 = findViewById(R.id.switch2);
         EditText auto = findViewById(R.id.auto);
+        EditText mail = findViewById(R.id.mail);
         EditText autobeschreibung = findViewById(R.id.editTextTextMultiLine);
         TextView anzahl_platz = findViewById(R.id.anzahl);
         DAOFahrerProfil dao = new DAOFahrerProfil();
@@ -55,6 +56,7 @@ public class Fahrer_Profil extends AppCompatActivity implements OnMapReadyCallba
                 FahrerProfil f = new FahrerProfil(adress_fahrer.getText().toString(),fahrer.getText().toString(),adress_ziel.getText().toString(),
                         swith1.getText().toString(),swith2.getText().toString(),auto.getText().toString(),autobeschreibung.getText().toString(),
                         anzahl_platz.getText().toString());
+                f.setMail(mail.getText().toString());
                 dao.add(f).addOnSuccessListener(suc ->{
                     Toast.makeText(Fahrer_Profil.this, "Fahrmöglichkeit Erfolgreich hinzugefügt", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Fahrer_Profil.this, MainActivity.class);
