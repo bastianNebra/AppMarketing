@@ -20,7 +20,7 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <com.google.android.gms.maps.MapView
+    <fragment
         android:layout_width="400dp"
         android:layout_height="200dp"
         android:id="@+id/detail_map"

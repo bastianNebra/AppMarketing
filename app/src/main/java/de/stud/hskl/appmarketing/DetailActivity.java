@@ -19,6 +19,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         setContentView(R.layout.activity_detail);
 
         SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.detail_map);
+        assert supportMapFragment != null;
         supportMapFragment.getMapAsync(this);
     }
 

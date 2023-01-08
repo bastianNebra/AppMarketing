@@ -7,16 +7,17 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.firebase.auth.FirebaseAuth;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
 public class Header extends AppCompatActivity {
 
-    FirebaseDatabase firebaseDatabase;
+   FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     TextView yourName;
     TextView yourStatus;
@@ -26,9 +27,9 @@ public class Header extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.header);
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
-        databaseReference = firebaseDatabase.getReference("users");
+        DatabaseReference databaseReference = firebaseDatabase.getReference("users");
 
         yourName = findViewById(R.id.your_name);
         yourStatus = findViewById(R.id.your_status);

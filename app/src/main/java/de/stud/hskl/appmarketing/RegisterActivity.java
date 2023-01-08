@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-         if (password.equals(confirmPassword)){
+        if (password.equals(confirmPassword)){
             mAuth.createUserWithEmailAndPassword(email, password)
 
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
