@@ -29,22 +29,25 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     ArrayList<FahrerProfil> list = new ArrayList<>();
 
-    public RVAdapter(Context ctx){
-        this.context= ctx;
+    public RVAdapter(Context ctx) {
+        this.context = ctx;
     }
-    public void setItems(ArrayList<FahrerProfil>fa){
+
+    public void setItems(ArrayList<FahrerProfil> fa) {
         list.addAll(fa);
     }
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(context).inflate(R.layout.layout_item, parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.layout_item, parent, false);
         return new FahrProfilVH(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        FahrProfilVH fa= (FahrProfilVH)holder;
+        FahrProfilVH fa = (FahrProfilVH) holder;
+
         FahrerProfil fahrer = list.get(position);
         fa.txt_name.setText(fahrer.getFahrer());
         fa.txt_beschreibung.setText(fahrer.getAutobeschreibun());
@@ -57,88 +60,58 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         ((FahrProfilVH) holder).lin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Mail gesendet Erfolgreiche Buchung", Toast.LENGTH_SHORT).show();
-                // Mail implementierung
-                try {
-                    buttonSendEmail(v, fahrer);
-                } catch (AddressException e) {
-                    e.printStackTrace();
-                }
 
-                Intent intent = new Intent(context, MainActivity.class);
-                context.startActivity(intent);
+                // Mail implementierung
+                final String sender= fahrer.getSendermail();
+               final  String receiverMail = fahrer.getMail();
+               final String password= "test22";
+                String message =" Hallo ich habe starkes Interesse für deine Mitfahrmöglichkeit können wir uns bitte darüber Unterhalten?";
+                String subject= "Mitfahr Anfrage";
+                Intent intent = new Intent(Intent.ACTION_SEND);
+
+                // add three fields to intent using putExtra function
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{receiverMail});
+                intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+                intent.putExtra(Intent.EXTRA_TEXT, message);
+
+                // set type of intent
+                intent.setType("message/rfc822");
+
+                // startActivity with intent with chooser as Email client using createChooser function
+                context.startActivity(Intent.createChooser(intent, "Choose an Email client :"));
+
+            /*Intent intent2 = new Intent(context, MainActivity.class);
+
+                context.startActivity(intent2);
+                Toast.makeText(context, "Mail gesendet; Erfolgreiche Buchung", Toast.LENGTH_SHORT).show();*/
+
+
 
             }
         });
 
 
     }
-
 
 
     @Override
     public int getItemCount() {
         return list.size();
     }
-    /*class MyViewHolder extends  RecyclerView.ViewHolder{
-
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-        } Represente notre classe fahrProfilVH*/
 
 
+    public void buttonSendEmail( FahrerProfil fahrer)  {
 
-    public void buttonSendEmail(View view, FahrerProfil fahrer ) throws AddressException {
-        try{
-        LoginActivity log= new LoginActivity();
-
-        String senderMail = log.mail;
-        String receiverEmail = fahrer.getMail();
-            System.out.println( senderMail);
-            System.out.println( receiverEmail);
-        String stringHost ="smtp.gmail.com";
-        String password="Test22";
-        Properties properties= System.getProperties();
-        properties.put("mail.smtp.host",stringHost);
-        properties.put("mail.smtp.port", "465");
-        properties.put("mail.smtp.ssl.enable","true");
-        properties.put("mail.smtp.auth","true");
-        javax.mail.Session session = Session.getInstance(properties, new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(senderMail, password);
-            }
-        });
-
-            MimeMessage mimeMessage = new MimeMessage(session);
-            mimeMessage.addRecipients(Message.RecipientType.TO, String.valueOf(new InternetAddress(receiverEmail)));
-
-
-            mimeMessage.setSubject("Mitfahr Buchung");
-            mimeMessage.setText(" Hallo, Ich möchte mit dir Fahren. Schreib mir bitte zürück,damit wir uns einigen");
-
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Transport.send(mimeMessage);
-                    } catch (MessagingException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-            thread.start();
-            System.out.println( senderMail);
-            System.out.println( receiverEmail);
-
-
-        }catch(AddressException e){
-            e.printStackTrace();
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-
+   String receiverMail = fahrer.getMail();
+   String message =" Hallo ich habe starkes Interesse für deine Mitfahrmöglichkeit können wir uns bitte darüber Unterhalten?";
+   String subject= "Mitfahr Anfrage";
+   Intent intent = new Intent(Intent.ACTION_SEND);
+   intent.putExtra(Intent.EXTRA_EMAIL, receiverMail);
+   intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+   intent.putExtra(Intent.EXTRA_TEXT, message);
+   intent.setType("message/rfc822");
+   context.startActivity(Intent.createChooser(intent, "Wähl ein EMail client aus"));
 
     }
-    }
+}
 

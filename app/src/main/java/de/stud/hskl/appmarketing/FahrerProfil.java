@@ -24,6 +24,16 @@ public class FahrerProfil {
 
     private String mail;
 
+    public String getSendermail() {
+        return sendermail;
+    }
+
+    public void setSendermail(String sendermail) {
+        this.sendermail = sendermail;
+    }
+
+    private String sendermail;
+
     public FahrerProfil() {
 
     }

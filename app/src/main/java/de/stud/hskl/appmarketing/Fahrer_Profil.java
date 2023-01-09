@@ -1,14 +1,6 @@
 package de.stud.hskl.appmarketing;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.OnMapReadyCallback;
-
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -18,22 +10,14 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-<<<<<<< HEAD
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 
 public class Fahrer_Profil extends AppCompatActivity implements OnMapReadyCallback {
-
-import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-
-public class Fahrer_Profil extends AppCompatActivity implements OnMapReadyCallback {
-
 
 
 
@@ -81,6 +65,7 @@ public class Fahrer_Profil extends AppCompatActivity implements OnMapReadyCallba
                         swith1.getText().toString(),swith2.getText().toString(),auto.getText().toString(),autobeschreibung.getText().toString(),
                         anzahl_platz.getText().toString());
                 f.setMail(mail.getText().toString());
+
                 dao.add(f).addOnSuccessListener(suc ->{
                     Toast.makeText(Fahrer_Profil.this, "Fahrmöglichkeit Erfolgreich hinzugefügt", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Fahrer_Profil.this, MainActivity.class);
@@ -104,7 +89,20 @@ public class Fahrer_Profil extends AppCompatActivity implements OnMapReadyCallba
     }
 
 
-    private void saveFahrerProfil(){
+
+
+
+
+
+});
+
+    }
+
+        private void saveFahrerProfil(){
+
+        }
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
 
     }
     private class GeoCoderHandler extends Handler {
@@ -122,15 +120,4 @@ public class Fahrer_Profil extends AppCompatActivity implements OnMapReadyCallba
             System.out.println(locationAddress);
         }
     }
-
-    @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-
-    }
-
-
 }
-
-
-}
-

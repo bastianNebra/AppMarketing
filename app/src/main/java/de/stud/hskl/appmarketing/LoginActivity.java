@@ -61,6 +61,8 @@ public class LoginActivity extends AppCompatActivity {
         EditText etLoginEmail = findViewById(R.id.inputEmail);
         EditText etLoginPassword = findViewById(R.id.inputPassword2);
         mail= etLoginEmail.getText().toString();
+        FahrerProfil f = new FahrerProfil();
+        f.setSendermail(mail);
 
         String email = etLoginEmail.getText().toString();
         String password = etLoginPassword.getText().toString();
